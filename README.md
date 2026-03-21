@@ -192,33 +192,3 @@ LIMIT 10;
 There are 3 unreturned loans (less than 10, so all are shown).
 https://images/5e.png
 
-Additional Analysis
-Books per Category
-
-sql
-SELECT category, COUNT(book_id) AS Book_Count
-FROM books
-GROUP BY category
-ORDER BY Book_Count DESC;
-There are 2 Fiction books, and 1 each in Business, Languages, Environmental, and Programming.
-https://images/A1.png
-
-Average Publication Year by Category
-
-sql
-SELECT category, AVG(publication_year) AS Avg_Publication_Year
-FROM books
-GROUP BY category
-ORDER BY Avg_Publication_Year DESC;
-https://images/A2.png
-
-Most Borrowed Books
-
-sql
-SELECT b.title, COUNT(l.loan_id) AS Borrow_Count
-FROM books b
-JOIN loans l ON b.book_id = l.book_id
-GROUP BY b.title
-ORDER BY Borrow_Count DESC;
-This shows which books are most popular based on loan frequency.
-https://images/A3.png
