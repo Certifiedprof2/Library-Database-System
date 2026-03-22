@@ -16,7 +16,7 @@ title VARCHAR(150) NOT NULL,
 author VARCHAR(100) NOT NULL,
 isbn VARCHAR(20) UNIQUE,
 category VARCHAR(50),
-pulication_year YEAR,
+publication_year YEAR,
 copies_available INT DEFAULT 1
 );
 
@@ -56,25 +56,25 @@ VALUES
 
 /* CREATE LOAN TABLE */
 CREATE TABLE loans (
-loans_id INT AUTO_INCREMENT PRIMARY KEY,
-book_id INT,
-member_id INT,
-borrow_date DATE NOT NULL,
-due_date DATE NOT NULL,
-return_date date,
- CONSTRAINT fk_book FOREIGN KEY (book_id) REFERENCES books(book_id),
+    loan_id INT AUTO_INCREMENT PRIMARY KEY,
+    book_id INT,
+    member_id INT,
+    borrow_date DATE NOT NULL,
+    due_date DATE NOT NULL,
+    return_date DATE,
+    CONSTRAINT fk_book FOREIGN KEY (book_id) REFERENCES books(book_id),
     CONSTRAINT fk_member FOREIGN KEY (member_id) REFERENCES members(member_id)
-);
+    );
 
 /* inserting data into my table */
 INSERT INTO loans
-(loan_id, book_id, member_id, borrow_date, due_date, return_date)
-VALUE
-(1, 101, 2001, '2026-03-08', '2026-03-22', NULL),
-(2, 102, 2002, '2026-03-07', '2026-03-21', '2026-03-10'),
-(3, 103, 2003, '2026-03-08', '2026-03-22', NULL),
-(4, 102, 2002, '2026-03-07', '2026-03-21', '2026-02-09'),
-(5, 103, 2003, '2026-03-08', '2026-03-22', NULL);
+(book_id, member_id, borrow_date, due_date, return_date)
+VALUES
+(1, 1, '2026-03-08', '2026-03-22', NULL),
+(2, 2, '2026-03-07', '2026-03-21', '2026-03-10'),
+(3, 3, '2026-03-08', '2026-03-22', NULL),
+(2, 2, '2026-03-07', '2026-03-21', '2026-02-09'),
+(3, 3, '2026-03-08', '2026-03-22', NULL);
 
 
 /* after creating my tables i validate and inspect each tables with the command DESCRIBE to check the structure of the table */
