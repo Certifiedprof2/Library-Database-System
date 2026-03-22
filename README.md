@@ -189,7 +189,6 @@ FROM loans
 WHERE return_date IS NULL
 ORDER BY borrow_date ASC
 LIMIT 10;
-![5e](images/5e.png)
 There are 3 unreturned loans (less than 10, so all are shown).
-https://images/5e.png
+![5e](images/5e.png)
 
