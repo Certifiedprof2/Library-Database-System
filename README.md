@@ -71,7 +71,7 @@ sql
 SELECT * 
 FROM books;
 There are 6 books in the library.
-![3a](images/3a.png)
+![3a](docs/3a.png)
 
 3b. Show all registered members
 
@@ -88,7 +88,7 @@ SELECT loan_id, book_id, member_id
 FROM loans
 WHERE borrow_date = '2026-03-07';
 There were 2 loans on 2026-03-07.
-![3c](images/3c.png)
+![3c](docs/3c.png)
 
 3d. Display all books with more than 3 available copies
 
@@ -97,7 +97,7 @@ SELECT book_id, title, author, copies_available
 FROM books
 WHERE copies_available > 3;
 There are 3 books with more than 3 copies available.
-![3d](images/3d.png)
+![3d](docs/3d.png)
 
 4a. Books published after 2015
 
@@ -106,7 +106,7 @@ SELECT book_id, title, author, publication_year
 FROM books
 WHERE publication_year > 2015;
 There is 1 book published after 2015 (iron Cap, 2017). Note: Clean Code (2008) is before 2015.
-![4a](images/4a.png)
+![4a](docs/4a.png)
 
 4b. Members who joined before 2022
 
@@ -115,7 +115,7 @@ SELECT member_id, first_name, last_name, membership_date
 FROM members
 WHERE membership_date < '2022-01-01';
 All 5 members joined before 2022 (all in 2021).
-![4b](images/4b.png)
+![4b](docs/4b.png)
 
 4c. Books that are either Fiction or Mystery
 
@@ -125,7 +125,7 @@ FROM books
 WHERE category = 'Fiction'
 	OR category = 'Mystery';
 There are 2 Fiction books. No Mystery books in the collection.
-![4c](images/4c.png)
+![4c](docs/4c.png)
 
 4d. Loans that have not been returned
 
@@ -134,7 +134,7 @@ SELECT loan_id, book_id, member_id, borrow_date, due_date, return_date
 FROM loans
 WHERE return_date IS NULL;
 There are 3 active loans not yet returned.
-![4d](images/4d.png)
+![4d](docs/4d.png)
 
 4e. Members who joined after 2020 and have borrowed books (bonus)
 
@@ -143,7 +143,7 @@ SELECT member_id, first_name, last_name
 FROM members
 WHERE membership_date > '2020';
 All 5 members joined after 2020 and have borrowing history.
-![4d](images/4e.png)
+![4d](docs/4e.png)
 
 5a. Sort all books alphabetically by title
 
@@ -151,7 +151,7 @@ sql
 SELECT book_id, title, author, category, publication_year
 FROM books
 ORDER BY title ASC;
-![5a](images/5a.png)
+![5a](docs/5a.png)
 
 5b. List distinct book categories
 
@@ -159,7 +159,7 @@ sql
 SELECT DISTINCT category
 FROM books;
 There are 5 unique categories: Business, Languages, Environmental, Fiction, Programming.
-![5b](images/5b.png)
+![5b](docs/5b.png)
 
 5c. Get top 5 most recent members
 
@@ -169,7 +169,7 @@ FROM members
 ORDER BY membership_date DESC
 LIMIT 5;
 All 5 members are shown as most recent (all joined in 2021).
-![5c](images/5c.png)
+![5c](docs/5c.png)
 
 5d. Skip the first 5 books and display the next 5
 
@@ -179,7 +179,7 @@ FROM books
 ORDER BY title ASC
 LIMIT 5 OFFSET 5;
 The 6th book (To Kill a Mockingbird) is displayed.
-![5d](images/5d.png)
+![5d](docs/5d.png)
 
 5e. Show the 10 most recent loans not yet returned
 
