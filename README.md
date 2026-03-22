@@ -79,7 +79,7 @@ sql
 SELECT member_id, first_name, last_name
 FROM members;
 There are 5 registered members.
-![3b](images/3b.png)
+![3b](docs/3b.png)
 
 3c. Find all loans made on a specific date
 
